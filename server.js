@@ -20,6 +20,10 @@ db.connect((err) => {
 const userRoutes= require('./routes/users.js');
 app.use('/api/users', userRoutes);
 
+//creation route quiz
+const questionsRoutes= require('./routes/questions.js');
+app.use('/api/quiz', questionsRoutes);
+
 const port = process.env.PORT || 5050;
 app.listen(port, () =>{
     console.log('SERVER  DEMMARE')
