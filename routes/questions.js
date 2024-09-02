@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 
 const jwt = require('jsonwebtoken')
 const db = require( '../config/db.js' )
-
-const secret = process.env.SECRET_KEY || 'ma-super-clef'
+require('../middleware/auth.js')
+const secret = process. env.SECRET_KEY || 'ma-super-clef'
 
 router.post('/create-question', async (req, res)=>{
     const {question, responses, correctAnswers} = req.body ;
@@ -26,10 +26,10 @@ router.post('/create-question', async (req, res)=>{
                 }
              })
             }
-             
          }
         res.status(201).send({message : 'quiz question créee'})
     })
+
 })
 
 module.exports = router ;

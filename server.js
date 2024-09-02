@@ -22,7 +22,11 @@ app.use('/api/users', userRoutes);
 
 //creation route quiz
 const questionsRoutes= require('./routes/questions.js');
-app.use('/api/quiz', questionsRoutes);
+app.use('/api/questions', questionsRoutes);
+
+//creation route quiz
+const quizRoutes= require('./routes/quiz.js');
+app.use('/api/quiz', quizRoutes);
 
 const port = process.env.PORT || 5050;
 app.listen(port, () =>{
