@@ -6,7 +6,16 @@ const jwt = require('jsonwebtoken')
 const db = require( '../config/db.js' )
 require('../middleware/auth.js')
 const secret = process. env.SECRET_KEY || 'ma-super-clef'
-
+router.post('/list-quiz', async (req, res)=>{
+    const {question} = req.body ;
+    const sql = "SELECT * FROM question WHERE question LIKE ?";
+    db.query(sql, ["%"+question+"%"], (err, result)=>{
+        if(err){
+            return res.status(500).send(err);
+        }
+        res.status(201).send({message : result})
+    })
+})
 router.post('/create-question', async (req, res)=>{
     const {question, responses, correctAnswers} = req.body ;
     const sql = "INSERT INTO question( question ) VALUE (?)";
