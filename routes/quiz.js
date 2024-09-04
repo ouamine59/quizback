@@ -44,47 +44,55 @@ let idQuestion ;
 
 
     router.post('/create', async (req, res)=>{
-        const {tab }= req.body ;
+        const {tab}= req.body ;
+        console.log(tab)
         const sql = "INSERT INTO quiz(titre,nombre) VALUE (?,?)";
-        console.log(tab._rawValue)
-         db.query(sql, [tab._rawValue[0].title,tab._rawValue[1].nombre ], (err, result)=>{
+
+ 
+         db.query(sql, [tab.title,2], (err, result)=>{
              if(err){
                  return res.status(500).send(err);
              }
-             for(i=2;i<tab._rawValue.length;i++){
+             for(let i = O ; i<tab.question.length ; i++){
                 const idQuiz = result.insertId;
-                const sql = "INSERT INTO question( question ) VALUE (?)";
-                db.query(sql, [tab._rawValue[i].question], (err, result)=>{
+
+                const sql = "INSERT INTO question( question ,responses, goodResponse) VALUE (?,?,?)";
+                db.query(sql, [tab[i].question, tab[i].responses, tab[i].correctAnswers], (err, result)=>{
                     if(err){
                         return res.status(500).send(err);
                     }
-                    const idQuestion  = result.insertId;
-                    const sql = "INSERT INTO avoir(idQuiz, idQuestion ) VALUE (?,?)";
-                    db.query(sql, [idQuiz, idQuestion], (err, result)=>{
-                        // for(j=0;j<tab._rawValue[i].responses.length;j++){
-                        //     for(y=0;y<tab._rawValue[i].correctAnswers.length;y++){
-                        //         const good = (i==tab._rawValue[i].correctAnswers[y])?true:false ;
-                        //         const urlReponse = "INSERT INTO response( response, isGood , idQuestion) VALUE (?, ?,?)";
-                        //         db.query(urlReponse, [tab._rawValue[i].responses[j], good, idQuestion], (err, result) =>{
-                        //             if(err){
-                        //                 return res.status(500).send(err);
-                        //             }
-                        //             res.status(201).send({message : 'quiz question créee'})
-                        //         })
-                        //     }
-                        // }
-                        
+                    idQuestion  = result.insertId;
+                    const sql1 = "INSERT INTO avoir(idQuiz, idQuestion ) VALUE (?,?)";
+                    db.query(sql1, [idQuiz, idQuestion], (err, result)=>{
+                        if(err){
+                            return res.status(500).send(err);
+                        }
+                        res.status(201).send({message : 'quiz question créee'})
                     })
                 })
-             }
-        
-        
-        //     
-        //         
-
-              
-                
-             
+            }
         })
+        
     })
 module.exports = router ;
+
+// table quizz :
+//  id
+//  title
+//  description
+
+// table question
+//  id 
+//  idQuiz
+//  question : string 
+//  reponses : Array
+//  bonne reponse : array
+
+// obj = {
+//     title : "combien font 2 + 2 ?"
+//     réponses : [
+//         "2", "3", "4"
+//     ],
+//     BONNREPONSE : ["2", "4"]
+// }
+
