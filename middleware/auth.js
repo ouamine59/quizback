@@ -1,29 +1,14 @@
-/* Récupération du header bearer */
-const extractBearerToken = headerValue => {
-    if (typeof headerValue !== 'string') {
-        return false
-    }
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
 
-    const matches = headerValue.match(/(bearer)\s+(\S+)/i)
-    return matches && matches[2]
-}
+    if (token == null) return res.sendStatus(401);
 
-/* Vérification du token */
-const checkTokenMiddleware = (req, res, next) => {
-    // Récupération du token
-    const token = req.headers.authorization && extractBearerToken(req.headers.authorization)
+    jwt.verify(token, secret, (err, user) => {
+        if (err) return res.sendStatus(403);
+        req.user = user;
+        next();
+    });
+};
 
-    // Présence d'un token
-    if (!token) {
-        return res.status(401).json({ message: 'Error. Need a token' })
-    }
-
-    // Véracité du token
-    jwt.verify(token, SECRET, (err, decodedToken) => {
-        if (err) {
-            res.status(401).json({ message: 'Error. Bad token' })
-        } else {
-            return next()
-        }
-    })
-}
+app.use(authenticateToken);

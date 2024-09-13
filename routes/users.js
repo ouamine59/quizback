@@ -7,6 +7,28 @@ const db = require( '../config/db.js' )
 
 
 const secret = process.env.SECRET_KEY || 'ma-super-clef'
+/** 
+ * @swagger
+ * /users:
+ *  get:
+ *      summary : recupere tous les user
+ *      response:
+ *          200:
+ *              description: Lise des utilisateurs
+ *              content: 
+ *                  application/json:
+ *                      schema:
+ *                          type : array
+ *                          items: 
+ *                              type: object
+ *                              properties :
+ *                                  id:
+ *                                      type: integer
+ *                                      example : 24
+ *                                  username :
+ *                                      type: string
+ *                                      example : 'tot'
+ */
 router.get('/', (req, res) => {
     const sql = 'SELECT * FROM users';
     db.query(sql, (err, results) => {
@@ -56,7 +78,7 @@ router.post('/login', async(req,res)=>{
             secret,
             { expiresIn:'1d'}
         )
-        res.status(200).send({token})      
+        res.status(201).send({token})      
     })
 })
 
@@ -69,4 +91,15 @@ router.get('/token',async(req, res)=>{
         res.status(201).json({message: false})
     }
 } )
+
+router.post('/delete', async (req, res)=>{
+    const {id} = req.body ;
+    const sql = "DELETE FROM users WHERE id =?";
+    db.query(sql, [id], (err, result)=>{
+        if(err){
+            return res.status(500).send(err);
+        }
+        res.status(201).send({message : 'utilisateur supprimer'})
+    })
+})
 module.exports = router ;

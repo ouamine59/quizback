@@ -1,98 +1,113 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const db = require('../config/db.js');
+require('../middleware/auth.js');
+const secret = process.env.SECRET_KEY || 'ma-super-clef';
 
-const jwt = require('jsonwebtoken')
-const db = require( '../config/db.js' )
-require('../middleware/auth.js')
-const secret = process. env.SECRET_KEY || 'ma-super-clef'
-let idQuestion ; 
+router.post('/create', (req, res) => {
+    const { titre,  questions } = req.body;
 
-    
-    // router.post('/create', async (req, res)=>{
-    //     const {titre,question,responses,correctAnswers }= req.body ;
-    //     const sql = "INSERT INTO quiz(titre) VALUE (?)";
-    //     db.query(sql, [titre], (err, result)=>{
-    //         if(err){
-    //             return res.status(500).send(err);
-    //         }
-    //         const idQuiz = result.insertId;
-    //         const sql = "INSERT INTO question( question ) VALUE (?)";
-    //         db.query(sql, [question], (err, result)=>{
-    //             if(err){
-    //                 return res.status(500).send(err);
-    //             }
-    //             const idQuestion  = result.insertId;
-    //             const sql = "INSERT INTO avoir(idQuiz, idQuestion ) VALUE (?,?)";
-    //         db.query(sql, [idQuiz, idQuestion], (err, result)=>{
-    //             for(i=0;i<responses.length;i++){
-    //               for(y=0;y<correctAnswers.length;y++){
-    //                   const good = (i==correctAnswers[y])?true:false ;
-    //                   const urlReponse = "INSERT INTO response( response, isGood , idQuestion) VALUE (?, ?,?)";
-    //                   db.query(urlReponse, [responses[i], good, idQuestion], (err, result) =>{
-    //                   if(err){
-    //                       return res.status(500).send(err);
-    //                   }
-    //                })
-    //               }
-    //            }
-    //                 res.status(201).send({message : 'quiz question créee'})
-    //             })
-    //         })
-    //     })
-    // })
+    const insertQuestionnaire = 'INSERT INTO quiz (titre, nombre) VALUES (?, ?)';
+
+    db.query(insertQuestionnaire, [titre, 2], (err, result) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+
+        const quizId = result.insertId;
+        // const insertQuestion = 'INSERT INTO question ( idQuiz, question,  responses, goodResponses) VALUES (?)';
+        // const questionData = questions.map(q => [
+        //     quizId,
+        //     q.question,
+        //     JSON.stringify(q.reponse), 
+        //     JSON.stringify(q.checkbox)
+        // ]);
+        console.log(questions)
+        for(let i = 1; i<questions.length; i++){
+            console.log(i)
+            db.query('INSERT INTO question (  question,  responses, goodResponses, idQuiz ) VALUES (?, ?, ?, ? )', 
+                [ questions[i].question,
+                JSON.stringify(questions[i].reponse),
+                JSON.stringify(questions[i].checkbox),
+                quizId
+            ], (err, result) => {
+                if (err) {
+                    console.log(err)
+                    return res.status(500).send(err);
+                }
+           });
+        }
+        res.status(200).json({ message: 'Questionnaire et questions insérés avec succès !' });
+        //  db.query(insertQuestion, [questionData], (err, result) => {
+        //      if (err) {
+        //         console.log(err)
+        //          return res.status(500).send(err);
+        //      }
+
+        //     res.status(200).json({ message: 'Questionnaire et questions insérés avec succès !' });
+        // });
+    });
+})
+router.get('/listing',async(req, res)=>{
+    const sql = 'SELECT * FROM quiz';
+    db.query(sql, (err, results) => {
+    if (err){
+        return res.status(500).send(err);
+    }
+    res.status(200).json(results);
+    });
+} )
+
+module.exports = router;
 
 
-    router.post('/create', async (req, res)=>{
-        const {tab}= req.body ;
-        console.log(tab)
-        const sql = "INSERT INTO quiz(titre,nombre) VALUE (?,?)";
 
- 
-         db.query(sql, [tab.title,2], (err, result)=>{
-             if(err){
-                 return res.status(500).send(err);
-             }
-             for(let i = O ; i<tab.question.length ; i++){
-                const idQuiz = result.insertId;
 
-                const sql = "INSERT INTO question( question ,responses, goodResponse) VALUE (?,?,?)";
-                db.query(sql, [tab[i].question, tab[i].responses, tab[i].correctAnswers], (err, result)=>{
-                    if(err){
-                        return res.status(500).send(err);
-                    }
-                    idQuestion  = result.insertId;
-                    const sql1 = "INSERT INTO avoir(idQuiz, idQuestion ) VALUE (?,?)";
-                    db.query(sql1, [idQuiz, idQuestion], (err, result)=>{
-                        if(err){
-                            return res.status(500).send(err);
-                        }
-                        res.status(201).send({message : 'quiz question créee'})
-                    })
-                })
-            }
-        })
-        
-    })
-module.exports = router ;
 
-// table quizz :
-//  id
-//  title
-//  description
 
-// table question
-//  id 
-//  idQuiz
-//  question : string 
-//  reponses : Array
-//  bonne reponse : array
 
-// obj = {
-//     title : "combien font 2 + 2 ?"
-//     réponses : [
-//         "2", "3", "4"
-//     ],
-//     BONNREPONSE : ["2", "4"]
-// }
+// const express = require('express');
+// const router = express.Router();
+// const bcrypt = require('bcrypt');
+// const jwt = require('jsonwebtoken');
+// const db = require('../config/db.js');
+// require('../middleware/auth.js');
+// const secret = process.env.SECRET_KEY || 'ma-super-clef';
 
+// router.post('/create', async (req, res) => {
+//     const { titre, questions } = req.body;
+
+//     // Insérer le quiz dans la table `quiz`
+//     const sqlQuiz = "INSERT INTO quiz(titre, nombre) VALUES (?, ?)";
+//     db.query(sqlQuiz, [titre, questions.length], (err, result) => {
+//         if (err) {
+//             return res.status(500).send(err);
+//         }
+//         const idQuiz = result.insertId;
+//         console.log(questions)
+//         // Insérer chaque question dans la table `question`
+//         questions.forEach((q) => {
+//             const sqlQuestion = "INSERT INTO question( question, responses, goodResponses) VALUES ( ?, ?, ?)";
+//             db.query(sqlQuestion, [ q.question, JSON.stringify(q.reponse), JSON.stringify(q.checkbox)], (err, result) => {
+//                 if (err) {
+//                     return res.status(500).send(err);
+//                 }
+//                 // Si besoin, insérer les relations entre quiz et questions dans la table 'avoir'
+//                     const questionIds = result.insertId; // Ceci ne fonctionne pas pour plusieurs insertions
+//                     const sql3 = "INSERT INTO avoir(idQuiz, idQuestion) VALUES (?, ?)";
+//                     db.query(sql3, [idQuiz, questionIds], (err) => {
+//                         if (err) {
+//                             return res.status(500).send(err);
+//                         }
+//                     });
+                
+//             });
+//         });
+
+//         res.status(201).send({ message: 'Quiz et questions créés avec succès' });
+//     });
+// });
+
+// module.exports = router;
