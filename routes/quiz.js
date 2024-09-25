@@ -8,25 +8,13 @@ const secret = process.env.SECRET_KEY || 'ma-super-clef';
 
 router.post('/create', (req, res) => {
     const { titre,  questions } = req.body;
-
     const insertQuestionnaire = 'INSERT INTO quiz (titre, nombre) VALUES (?, ?)';
-
     db.query(insertQuestionnaire, [titre, 2], (err, result) => {
         if (err) {
             return res.status(500).send(err);
         }
-
         const quizId = result.insertId;
-        // const insertQuestion = 'INSERT INTO question ( idQuiz, question,  responses, goodResponses) VALUES (?)';
-        // const questionData = questions.map(q => [
-        //     quizId,
-        //     q.question,
-        //     JSON.stringify(q.reponse), 
-        //     JSON.stringify(q.checkbox)
-        // ]);
-        console.log(questions)
-        for(let i = 1; i<questions.length; i++){
-            console.log(i)
+        for(let i = 0; i<questions.length; i++){
             db.query('INSERT INTO question (  question,  responses, goodResponses, idQuiz ) VALUES (?, ?, ?, ? )', 
                 [ questions[i].question,
                 JSON.stringify(questions[i].reponse),
@@ -34,20 +22,11 @@ router.post('/create', (req, res) => {
                 quizId
             ], (err, result) => {
                 if (err) {
-                    console.log(err)
                     return res.status(500).send(err);
                 }
            });
         }
         res.status(200).json({ message: 'Questionnaire et questions insérés avec succès !' });
-        //  db.query(insertQuestion, [questionData], (err, result) => {
-        //      if (err) {
-        //         console.log(err)
-        //          return res.status(500).send(err);
-        //      }
-
-        //     res.status(200).json({ message: 'Questionnaire et questions insérés avec succès !' });
-        // });
     });
 })
 router.get('/listing',async(req, res)=>{

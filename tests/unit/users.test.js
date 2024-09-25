@@ -1,6 +1,6 @@
 //import {describe, expect, test} from '@jest/globals';
 
-const { describe, expect, test } = require('@jest/globals');
+//const { describe, expect, test } = require('@jest/globals');
 const request = require('supertest');
 const express = require('express');
 const jwt = require('jsonwebtoken');
@@ -100,25 +100,20 @@ it('should login a user (POST /users/login)', async () => {
 
 it('should delete an user (POST /users/delete)', async () => {
   const hashedPassword = await bcrypt.hash('1234', 10);
-  
   // Simuler un utilisateur avec tous les champs nécessaires pour créer le JWT
   const user = { 
     id: 4 
   };
-
   // Simuler la base de données
   db.query.mockImplementation((sql, values, callback) => {
       callback(null, [user]);
   });
-
   // Envoyer la requête avec le mot de passe brut
   const response = await request(app)
     .post('/users/delete')
     .send({ id: 4});  // Mot de passe brut envoyé par l'utilisateur
-
   // Vérifier le statut de la réponse
   expect(response.status).toBe(201);
-
   // Vérifier que le token est bien renvoyé dans le body
   expect(response.body).toEqual({message : 'utilisateur supprimer'});
 });
