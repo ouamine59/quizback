@@ -1,0 +1,16 @@
+#containerProductsMobile , #containerProductsBigScreen{
+    display:flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    margin-top: 30px;
+    
+}
+#containerProductsMobile {
+    justify-content: center;
+    margin-top: 40px;
+}
+#containerProductsBigScreen{
+    width:100%;
+
+    justify-content:space-around;
+}

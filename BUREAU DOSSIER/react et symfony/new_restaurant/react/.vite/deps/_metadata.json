@@ -1,0 +1,127 @@
+{
+  "hash": "44f366b9",
+  "configHash": "f6f68322",
+  "lockfileHash": "923bb036",
+  "browserHash": "5e0f2b06",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "b1a9cc32",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "83c13ea2",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "4bfbf9fd",
+      "needsInterop": false
+    },
+    "react-auth-kit/hooks/useAuthUser": {
+      "src": "../../node_modules/react-auth-kit/hooks/useAuthUser.js",
+      "file": "react-auth-kit_hooks_useAuthUser.js",
+      "fileHash": "8f04255b",
+      "needsInterop": true
+    },
+    "react-auth-kit/hooks/useAuthHeader": {
+      "src": "../../node_modules/react-auth-kit/hooks/useAuthHeader.js",
+      "file": "react-auth-kit_hooks_useAuthHeader.js",
+      "fileHash": "328f190a",
+      "needsInterop": true
+    },
+    "react-auth-kit/createStore": {
+      "src": "../../node_modules/react-auth-kit/createStore.js",
+      "file": "react-auth-kit_createStore.js",
+      "fileHash": "24fcd890",
+      "needsInterop": true
+    },
+    "react-auth-kit": {
+      "src": "../../node_modules/react-auth-kit/index.js",
+      "file": "react-auth-kit.js",
+      "fileHash": "898b3351",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "1ba1488c",
+      "needsInterop": false
+    },
+    "react-responsive": {
+      "src": "../../node_modules/react-responsive/dist/esm/index.js",
+      "file": "react-responsive.js",
+      "fileHash": "2b66b145",
+      "needsInterop": false
+    },
+    "react-hook-form": {
+      "src": "../../node_modules/react-hook-form/dist/index.esm.mjs",
+      "file": "react-hook-form.js",
+      "fileHash": "840213cb",
+      "needsInterop": false
+    },
+    "react-auth-kit/createRefresh": {
+      "src": "../../node_modules/react-auth-kit/createRefresh.js",
+      "file": "react-auth-kit_createRefresh.js",
+      "fileHash": "85eb3d35",
+      "needsInterop": true
+    },
+    "react-auth-kit/hooks/useSignIn": {
+      "src": "../../node_modules/react-auth-kit/hooks/useSignIn.js",
+      "file": "react-auth-kit_hooks_useSignIn.js",
+      "fileHash": "ae2d9a76",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "7b345835",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "760f7fc1",
+      "needsInterop": false
+    },
+    "react-textarea-autosize": {
+      "src": "../../node_modules/react-textarea-autosize/dist/react-textarea-autosize.browser.development.esm.js",
+      "file": "react-textarea-autosize.js",
+      "fileHash": "ea9acbd1",
+      "needsInterop": false
+    },
+    "react-hot-toast": {
+      "src": "../../node_modules/react-hot-toast/dist/index.mjs",
+      "file": "react-hot-toast.js",
+      "fileHash": "ea9e36d3",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-JMVEG3FK": {
+      "file": "chunk-JMVEG3FK.js"
+    },
+    "chunk-SHGD3LFM": {
+      "file": "chunk-SHGD3LFM.js"
+    },
+    "chunk-T4PTQMW7": {
+      "file": "chunk-T4PTQMW7.js"
+    },
+    "chunk-ZJZ557EG": {
+      "file": "chunk-ZJZ557EG.js"
+    },
+    "chunk-CJ5X75XJ": {
+      "file": "chunk-CJ5X75XJ.js"
+    },
+    "chunk-TWJRYSII": {
+      "file": "chunk-TWJRYSII.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
+}

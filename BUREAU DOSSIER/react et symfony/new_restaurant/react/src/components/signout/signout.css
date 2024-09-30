@@ -1,0 +1,26 @@
+.accountBigScreen,.accountMobile{
+    display:flex;
+    justify-content: center;
+    min-width: 50px;
+    height: 20px;
+
+    align-items: center;
+    margin-top: 10px;
+}
+#btn-signout{
+    width:20px;
+    height: 20px;
+    background-color: rgb(212, 22, 22);
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+#btn-signout:hover{
+    cursor: pointer;
+}
+

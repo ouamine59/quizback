@@ -1,0 +1,12 @@
+#containerLogoMobile, #containerLogoBigScreen{
+    width:100%;
+}
+
+
+.logoMobile,.logoBigScreen{
+    width:212px;
+    height:50px;
+}
+/* .logoBigScreen{
+
+} */

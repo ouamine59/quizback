@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/react-auth-kit/AuthContext.js"],
+  "sourcesContent": ["\"use strict\";\n'use client';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\nexports.useReactAuthKit = useReactAuthKit;\nvar _react = require(\"react\");\nvar _errors = require(\"./errors\");\nfunction getContext() {\n  var context = (0, _react.createContext)(null);\n  if (process.env.NODE_ENV !== 'production') {\n    context.displayName = 'ReactAuthKit';\n  }\n  return context;\n}\nvar AuthKitContext = getContext();\nfunction useReactAuthKit() {\n  var context = (0, _react.useContext)(AuthKitContext);\n  if (context === null) {\n    throw new _errors.AuthError('Auth Provider is missing. ' + 'Make sure, you are using this component inside the auth provider.');\n  }\n  return context;\n}\nvar _default = exports.default = AuthKitContext;"],
+  "mappings": ";;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAGA,WAAO,eAAe,SAAS,cAAc;AAAA,MAC3C,OAAO;AAAA,IACT,CAAC;AACD,YAAQ,UAAU;AAClB,YAAQ,kBAAkB;AAC1B,QAAI,SAAS;AACb,QAAI,UAAU;AACd,aAAS,aAAa;AACpB,UAAI,WAAW,GAAG,OAAO,eAAe,IAAI;AAC5C,UAAI,MAAuC;AACzC,gBAAQ,cAAc;AAAA,MACxB;AACA,aAAO;AAAA,IACT;AACA,QAAI,iBAAiB,WAAW;AAChC,aAAS,kBAAkB;AACzB,UAAI,WAAW,GAAG,OAAO,YAAY,cAAc;AACnD,UAAI,YAAY,MAAM;AACpB,cAAM,IAAI,QAAQ,UAAU,6FAAkG;AAAA,MAChI;AACA,aAAO;AAAA,IACT;AACA,QAAI,WAAW,QAAQ,UAAU;AAAA;AAAA;",
+  "names": []
+}

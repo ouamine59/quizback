@@ -1,0 +1,9 @@
+.textareaBigScreen, .textareaMobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.labelTextareaBigScreen{
+    margin-top: 25px;
+    margin-left: 5%;
+}

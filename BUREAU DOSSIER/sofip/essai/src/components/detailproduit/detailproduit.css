@@ -1,0 +1,83 @@
+#containerDetailProduitBigScreen, #containerDetailProduitMobile{
+    display:flex;
+    margin-bottom: 25px;
+}
+#containerDetailProduitMobile{
+    flex-direction: column;
+    align-items: center;
+}
+#containerDetailProduitBigScreen{
+    flex-direction: row-reverse;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#prixDetailProduitBigScreen, #prixDetailProduitMobile{
+    color:#ba0b0b;
+    font-family: "Road Rage";
+    font-size: 36px;
+    display:flex;
+    width:90%;
+    margin-left:auto;
+    margin-right: auto;
+    display:flex;
+    justify-content: end;
+
+}
+#imgDetailProduitBigScreen, #imgDetailProduitMobile{
+    border-radius: 5px;
+}
+#imgDetailProduitBigScreen{
+    width:30%;
+}
+#imgDetailProduitMobile{
+    width:90%;
+}
+#descriptionDetailProduitBigScreen,#descriptionDetailProduitMobile{
+    display:flex;
+    justify-content: start;
+    flex-direction: column;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#descriptionDetailProduitBigScreen{
+    position:relative;
+    left:10%;
+    top:-100px;
+    width:50%;
+}
+#descriptionDetailProduitBigScreen div,#descriptionDetailProduitMobile div{
+    font-family: "Passion One";
+    font-size: 20px;
+    margin-top: 20px;
+    min-width:100%;
+    height:30px;
+    background-color: white;
+
+}
+.paraDetailProductBigScreen, .paraDetailProductMobile{
+    margin-left: auto;
+    margin-right: auto;
+    width:90%;
+}
+.containerOptionBigScreen, .containerOptionMobile{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width:100%;
+}
+.containerOptionBigScreen p{
+    width:50%;
+    background-color: #ba0b0b;
+}
+.optionBigScreen{
+    width:90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 25px;
+}
+#positionOptionBigScreen{
+    display:flex;
+}

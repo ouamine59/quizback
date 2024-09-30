@@ -1,0 +1,56 @@
+
+.displayProductsMobile, .displayProductsBigScreen{
+    display:flex;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-top: 25px;
+}
+.displayProductsBigScreen{
+    width:420px;
+}
+.displayProductsMobile{
+    width:90%;
+}
+.imgProductMobile, .imgProductBigScreen{
+    width:90px;
+    height:90px;
+    border-radius: 5px;
+}
+
+.infoProductBigScreen, .infoProductMobile{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.titreAndPrixBigScreen, .titreAndPrixMobile{
+    display:flex;
+    justify-content: space-between;
+    width:280px;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.titreBigScreen, .titreMobile{
+    font-size: 20px;
+    font-family: 'Road Rage';
+}
+.prixBigScreen, .prixMobile{
+    color:#ba0b0B;
+}
+
+.linkProductBigScreen , .linkProductMobile{
+    text-decoration: none;
+    color:#057532;
+    font-family: "Road Rage";
+    font-size: 20px;
+    text-align: end;
+    margin-right: 15px;
+}
+section{
+    background-color: white;
+}

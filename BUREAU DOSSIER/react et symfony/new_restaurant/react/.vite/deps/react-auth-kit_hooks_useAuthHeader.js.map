@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/react-auth-kit/hooks/useAuthHeader.js"],
+  "sourcesContent": ["\"use strict\";\n'use client';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\nvar _AuthContext = require(\"../AuthContext\");\nvar _utils = require(\"../utils/utils\");\nfunction useAuthHeader() {\n  var _useReactAuthKit = (0, _AuthContext.useReactAuthKit)(),\n    value = _useReactAuthKit.value;\n  if (!!value.auth && (0, _utils.isAuthenticated)(value)) {\n    return \"\".concat(value.auth.type, \" \").concat(value.auth.token);\n  } else {\n    return null;\n  }\n}\nvar _default = exports.default = useAuthHeader;"],
+  "mappings": ";;;;;;;;;;;;;;AAAA;AAAA;AAGA,WAAO,eAAe,SAAS,cAAc;AAAA,MAC3C,OAAO;AAAA,IACT,CAAC;AACD,YAAQ,UAAU;AAClB,QAAI,eAAe;AACnB,QAAI,SAAS;AACb,aAAS,gBAAgB;AACvB,UAAI,oBAAoB,GAAG,aAAa,iBAAiB,GACvD,QAAQ,iBAAiB;AAC3B,UAAI,CAAC,CAAC,MAAM,SAAS,GAAG,OAAO,iBAAiB,KAAK,GAAG;AACtD,eAAO,GAAG,OAAO,MAAM,KAAK,MAAM,GAAG,EAAE,OAAO,MAAM,KAAK,KAAK;AAAA,MAChE,OAAO;AACL,eAAO;AAAA,MACT;AAAA,IACF;AACA,QAAI,WAAW,QAAQ,UAAU;AAAA;AAAA;",
+  "names": []
+}

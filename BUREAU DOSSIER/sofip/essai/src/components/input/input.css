@@ -1,0 +1,50 @@
+.containerVisiteurMobile, .containerVisiteurBigScreen{
+    display:flex;
+    justify-content: center;
+    margin-top: 25px;
+    flex-direction: column;
+}
+.containerErrorBigScreen, .containerErrorMobile{
+    width:90%;
+    height:20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ .containerVisiteurMobile{ 
+    width:100%;
+} 
+.containerVisiteurBigScreen{
+    margin-top: 25px;
+    margin-left: 5%;
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    height:40px;
+    align-items: center;
+
+}
+.inputVisiteurMobile,.inputVisiteurBigScreen{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.inputVisiteurMobile{
+    width:90%;
+    margin-left:auto;
+    margin-right: auto;
+
+}
+.inputBigScreen{
+    width:30%;
+    height:20px;
+}
+
+.labelMobile, .labelBigScreen{  
+    font-family: --main-ff-label;
+}
+.labelMobile{
+    margin-left: 5%;
+}
+ .labelBigScreen{
+    font-size: 20px;
+} 

@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'Cake' ;
+    src: url('./assets/fonts/Cake.otf');
+}
+@font-face {
+    font-family: 'Lemon' ;
+    src: url('./assets/fonts/Lemon.otf');
+}
+@font-face {
+    font-family: 'Rami' ;
+    src: url('./assets/fonts/Rami.ttf');
+}
+@media (min-width:800px) {
+    
+
+body{
+    margin:0;
+    font-family: 'Rami';
+}
+header{
+    background-image: url("/assets/images/fond.jpg");
+    background-size: 100% ;
+    height:100vb;
+    position: relative;
+
+}
+#menuBurger{
+    display:none;
+}
+#opacityBlue{
+    width:100%;
+    height:100vb;
+    background-color: rgba(70, 81, 116, 0.589);
+    position: absolute;
+}
+#navbar{
+    position: absolute;
+    width:100%;
+    display:flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+#containerLink{
+    width:70%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+#logo{
+    font-family: Cake;
+    margin-left: 3%;
+    margin-top: 12px;
+    color:white;
+    font-size: 50px;
+}
+#menu{
+    background-color: rgba(0,0,0,.235); 
+    position: relative;
+    top:-125px;
+    width:90%;
+    height:200px;
+    right:-90%;
+    transform: skewY(10deg); 
+}
+#menuBurger{
+    display:none;
+}
+#containerLinkMobile{
+    display:none;
+}
+#linkMenu{
+    position: absolute;
+    display:flex;
+    align-items: center;
+    height:50px;
+    width:40%;
+    
+    justify-content: space-around;
+}
+a{
+    color:white;
+    text-decoration: none;
+    font-family: 'Lemon';
+}
+#booking{
+    border:1px solid  rgb(255, 193, 165);
+    color: rgb(255, 193, 165);
+    padding: 10px;
+}
+
+#displayTitle{
+    position: relative;
+    display:flex;
+    width: 100%;
+    top:-400px;
+    height:100px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#name{
+    font-family: 'Lemon';
+    font-size: 40px;
+    color:white ;
+    font-family: 'Rami';
+}
+#slogan{
+    color:white ;
+    padding: 5Px;
+    font-family: 'Lemon';
+    letter-spacing:1px;
+}
+#discover{
+    border:1px solid white;
+    position: absolute;
+    top:100px;
+    padding-left :20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#containerDiscover{
+    display:flex;
+    justify-content: center;
+
+}
+article{
+    background-color: #0E1721;
+}
+#jonction{
+    position: relative;
+
+    transform: skewY(-5deg);
+    transform: skewY(-5deg);
+    background-color: #0E1721;
+    width: 100%;
+    height: 20vb;
+    width: 100%;
+    height: 20vb;
+    top:-90px;
+}
+#article{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+}
+
+#titreArticle{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#exceptionTable{
+    font-family: 'Rami';
+    color:white;
+    font-size: 40px;
+}
+#tradition{
+    font-family: 'Lemon';
+    color:#f0cd99;
+}
+#containercadre{
+    display:flex;
+    justify-content: center;
+}
+#cadre{
+    width:15%;
+    height:3px;
+    background: linear-gradient(to right , #0E1721, #f0cd99 80%, #0E1721);
+}
+#contenu{
+    display:flex;
+    justify-content: center;
+    color:white ;
+}
+#imgArticle{
+    background-image: url('./assets/images/table.jpg');
+    background-size: 350px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width:350px;
+    height:350px;
+    border-radius: 50%;
+}
+
+.artLeft, .artRigth{
+    display:flex;
+    width:350px;
+    align-items: end;
+    flex-direction: column;
+    font-family: 'Rami';
+}
+.artLeft{
+    align-items: end;
+    text-align: end;
+}
+.artRigth{
+    text-align: start;
+    align-items: start;
+}
+.contArticle{
+    margin-bottom: 50px;
+}
+.year{
+    color:#f0cd99;
+    font-family: 'Rami';
+}
+}
+
+/*******/

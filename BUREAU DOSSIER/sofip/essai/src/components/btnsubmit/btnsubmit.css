@@ -1,0 +1,33 @@
+.containerBtnBigScreen, .containerBtnMobile{
+    display:flex;
+    margin-top: 25px;
+
+}
+.containerBtnBigScreen{
+    width:100%;
+}
+
+.successAdminMobile, .successAdminBigScreen{
+    background-color: var(--main-bg-submit);
+    display:flex;
+    justify-content: center;
+    color:var(--main-color-btn);
+    font-family: var(--main-ff-btn);
+    font-size: var(--main-size-btn);
+    height:20px;
+    border-radius: 15px;
+}
+
+.successAdminMobile{
+    width:90%;  
+}
+/* .successAdminBigScreen{
+    width:50%;
+} */
+input[type='submit']{
+    border:none;
+}
+input[type='submit']:hover{
+    border:none;
+    cursor: pointer;
+}

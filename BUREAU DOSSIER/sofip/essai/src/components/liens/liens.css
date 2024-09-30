@@ -1,0 +1,151 @@
+.containerMobile,.containerBigScreen{
+    display:flex;
+    justify-content: end;
+}
+
+.containerReturnBigScreen{
+  background-color: var(--main-bg-btn-retour );
+  width:80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  border-radius: 5px;
+}
+.linkMobile, .linkBigScreen{
+    display:flex;
+    justify-content: end;
+    
+    margin-right: 10%;
+    margin-top:10px;
+    background-color: rgba(0, 132, 255, 0.614);
+    min-width:80px;
+
+    border-radius: 12.5px;
+    height:25px;
+    text-decoration: none;
+    color:white;
+}
+
+.linkMobile:hover{
+    cursor:pointer;
+    
+}
+
+.cat_mobile, .catBigScreen{
+    border:1px solid black;
+   
+    height:40px;
+    text-align: center;
+    vertical-align: auto;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.cat_mobile{
+  width:80%;
+}
+.catBigScreen{
+    width:250px;
+}
+.retour{
+    display:flex;
+    justify-content: start;
+}
+.styleretour{
+    text-decoration: none;
+    color:var(--main-color-btn-retour);
+    font-family: var(--main-ff-btn);
+    font-size: var(--main-size-retour);
+    border-radius: 10px;
+}
+.contLinkTabMobile, .contLinkTabBigScreen{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 50px;
+    text-align: center;
+    border:1px solid black ;
+    margin:20px;
+}
+.contLinkTabMobile{
+  width: 90%;
+}
+.contLinkTabBigScreen{
+    width: 150px;
+}
+.linkTabMobile{
+    text-decoration: none;
+}
+.accountMobile, .accountBigScreen{
+  margin-right: 5px;  
+}
+
+  .containerUpdateMobile,.containerUpdateBigScreen{
+    display:flex;
+    justify-content: center;
+    min-width: 130px;
+  }
+
+  .linkUpdateMobile, .linkUpdateBigScreen{
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    width:100%;
+    text-align: center;
+  }
+  .linkUpdateMobile{
+    width:100%;
+    margin-bottom: 10px;
+  }
+  .linkUpdateBigScreen{
+    width:140px;
+  }
+  .containerMenu{
+    border:1px solid black;
+    width:100%;
+  }
+
+  .moncompteAdminBigScreen, .moncompteAdminMobile{
+    font-family: var(--main-ff-account);
+    text-decoration: none;
+    color: var(--main-color-account);
+    font-size: var(--main-size-acccount);
+    font-weight: bold;
+  }
+
+  .containerCreateAdminBigScreen{
+    background-color: var(--main-bg-submit);
+
+    border-radius:5px ;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  .linkCreateBigScreen{
+    color:var(--main-color-btn);
+    text-decoration: none;
+    padding:15px;
+  }
+  .linkCreateBigScreen div{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .linkCreateBigScreen :hover{
+    cursor: pointer;
+  }
+  #btn-create{
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    color:var(--main-color-btn-create);
+    vertical-align: middle;
+    min-width: 20px;
+    height:20px;
+ 
+  }

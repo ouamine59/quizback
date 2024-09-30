@@ -1,0 +1,8 @@
+#errorTextareaBigScreen, #errorTextareaMobile{
+    display:flex;
+    width:90%;
+    height:20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: start;
+}

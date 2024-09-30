@@ -1,0 +1,15 @@
+.optionIngredientRedBigScreen, .optionIngredientRedMobile, .optionIngredientGreenBigScreen, .optionIngredientGreenMobile{
+    width:100px;
+    height:30px;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.optionIngredientRedBigScreen, .optionIngredientRedMobile{
+    background-color: #f70C0C;
+}
+.optionIngredientGreenBigScreen, .optionIngredientGreenMobile{
+    background-color: #188041;
+
+}

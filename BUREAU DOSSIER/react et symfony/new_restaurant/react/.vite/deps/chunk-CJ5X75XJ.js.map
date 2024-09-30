@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/react-auth-kit/errors.js"],
+  "sourcesContent": ["\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.AuthError = void 0;\nclass AuthError extends Error {\n  constructor(message) {\n    super(message);\n  }\n}\nexports.AuthError = AuthError;"],
+  "mappings": ";;;;;AAAA;AAAA;AAAA;AAEA,WAAO,eAAe,SAAS,cAAc;AAAA,MAC3C,OAAO;AAAA,IACT,CAAC;AACD,YAAQ,YAAY;AACpB,QAAM,YAAN,cAAwB,MAAM;AAAA,MAC5B,YAAY,SAAS;AACnB,cAAM,OAAO;AAAA,MACf;AAAA,IACF;AACA,YAAQ,YAAY;AAAA;AAAA;",
+  "names": []
+}

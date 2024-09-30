@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/react-auth-kit/hooks/useAuthUser.js"],
+  "sourcesContent": ["\"use strict\";\n'use client';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\nvar _AuthContext = require(\"../AuthContext\");\nvar _utils = require(\"../utils/utils\");\nfunction useAuthUser() {\n  var _useReactAuthKit = (0, _AuthContext.useReactAuthKit)(),\n    value = _useReactAuthKit.value;\n  if ((0, _utils.isAuthenticated)(value)) {\n    return value.userState;\n  } else {\n    return null;\n  }\n}\nvar _default = exports.default = useAuthUser;"],
+  "mappings": ";;;;;;;;;;;;;;AAAA;AAAA;AAGA,WAAO,eAAe,SAAS,cAAc;AAAA,MAC3C,OAAO;AAAA,IACT,CAAC;AACD,YAAQ,UAAU;AAClB,QAAI,eAAe;AACnB,QAAI,SAAS;AACb,aAAS,cAAc;AACrB,UAAI,oBAAoB,GAAG,aAAa,iBAAiB,GACvD,QAAQ,iBAAiB;AAC3B,WAAK,GAAG,OAAO,iBAAiB,KAAK,GAAG;AACtC,eAAO,MAAM;AAAA,MACf,OAAO;AACL,eAAO;AAAA,MACT;AAAA,IACF;AACA,QAAI,WAAW,QAAQ,UAAU;AAAA;AAAA;",
+  "names": []
+}

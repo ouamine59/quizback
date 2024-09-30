@@ -1,0 +1,52 @@
+:root{
+    /* background-color */
+    --main-bg-h1 : #E99210;
+    --main-bg-btn-retour :#E99210;
+    --main-bg-section : #d9D9D9;
+    --main-bg-submit : #009B4D;
+    /* color text*/
+    --main-color-h1 : #FAF5E9;
+    --main-color-btn:white ;
+    --main-color-btn-retour:white ;
+
+    --main-color-account :black;
+    --main-color-btn-create :#009B4D;
+    /* font-family*/
+    --main-ff-btn : roboto ;
+    --main-ff-label :roboto;
+    --main-ff-account :roboto;
+    /* font-size*/
+    --main-size-btn : 15px;
+    --main-size-h1-mobile : 20px;
+    --main-size-h1-big : 20px;
+    --main-size-acccount: 14px;
+    --main-size-create:14px;
+    --main-size-retour:14px;
+}
+#sectionAdminBigScreen, #sectionAdminMobile{
+    background-color: var(--main-bg-section);
+    width:90%;
+    opacity: 70%;
+    position:relative;
+    top:-25px;
+  }
+  .articleAdminBigScreen, .articleAdminMobile{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    left:5%;
+    right:5%;
+    margin-top: 100px;
+  }
+
+  #retourAndCreateBigScreen{
+    width:90%;
+    height:60px;
+    margin-left: auto;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }

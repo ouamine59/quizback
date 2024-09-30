@@ -1,0 +1,16 @@
+#headerAdminBigScreen, #headerAdminMobile{
+    width:90%;
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+#headerAdminBigScreen{
+    justify-content: space-between;
+}
+#headerAdminMobile{
+    justify-content: space-between;
+}
+#logoAdminBigScreen, #logoAdminMobile{
+    width:100px;
+    height:35px;
+}

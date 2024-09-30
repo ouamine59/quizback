@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/react-auth-kit/utils/utils.js"],
+  "sourcesContent": ["\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.isAuthenticated = isAuthenticated;\nfunction isAuthenticated(auth) {\n  if (auth.auth) {\n    return new Date(auth.auth.expiresAt) > new Date();\n  }\n  return false;\n}"],
+  "mappings": ";;;;;AAAA;AAAA;AAAA;AAEA,WAAO,eAAe,SAAS,cAAc;AAAA,MAC3C,OAAO;AAAA,IACT,CAAC;AACD,YAAQ,kBAAkB;AAC1B,aAAS,gBAAgB,MAAM;AAC7B,UAAI,KAAK,MAAM;AACb,eAAO,IAAI,KAAK,KAAK,KAAK,SAAS,IAAI,oBAAI,KAAK;AAAA,MAClD;AACA,aAAO;AAAA,IACT;AAAA;AAAA;",
+  "names": []
+}

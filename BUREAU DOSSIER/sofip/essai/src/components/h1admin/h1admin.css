@@ -1,0 +1,25 @@
+#ContainerH1BigScreen, #ContainerH1Mobile{
+    width:100%;
+    border-radius: 10px 10px 0px 0px;
+    padding:15px;
+    background-color: var(--main-bg-h1) ;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ #h1AdminMobile,#h1AdminBigScreen{
+    color:var(--main-color-h1);
+    text-align: left;
+    font-family: Roboto;
+    display:inline-block;
+    vertical-align: middle;
+    width:100%;
+} 
+#h1AdminMobile{
+    font-size:var(--main-size-h1-mobile);
+}
+#h1AdminBigScreen{
+    font-size: var(--main-size-h1-big);
+
+}

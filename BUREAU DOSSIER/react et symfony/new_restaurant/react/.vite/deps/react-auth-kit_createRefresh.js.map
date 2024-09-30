@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/react-auth-kit/createRefresh.js"],
+  "sourcesContent": ["\"use strict\";\n'use client';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\nvar _errors = require(\"./errors\");\nfunction createRefresh(param) {\n  if (param.interval < 0) {\n    throw new _errors.AuthError('Refresh interval is a time in seconds and can\\'t be a negative(-ve)' + ' number. Make sure you are using possitive number.');\n  }\n  return param;\n}\nvar _default = exports.default = createRefresh;"],
+  "mappings": ";;;;;;;;;AAAA;AAAA;AAGA,WAAO,eAAe,SAAS,cAAc;AAAA,MAC3C,OAAO;AAAA,IACT,CAAC;AACD,YAAQ,UAAU;AAClB,QAAI,UAAU;AACd,aAAS,cAAc,OAAO;AAC5B,UAAI,MAAM,WAAW,GAAG;AACtB,cAAM,IAAI,QAAQ,UAAU,sHAA4H;AAAA,MAC1J;AACA,aAAO;AAAA,IACT;AACA,QAAI,WAAW,QAAQ,UAAU;AAAA;AAAA;",
+  "names": []
+}

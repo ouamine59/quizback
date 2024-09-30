@@ -1,0 +1,55 @@
+#containerBookingBigScreen{
+    width:80%;
+    height:400px;
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bookingMobile, #bookingBigScreen{
+    background-color: #2C2929;
+    
+    opacity: 88%;
+    display:flex;
+    flex-direction: column;
+}
+#bookingMobile{
+    height:260px;
+    margin-top:20px;
+    
+}
+#bookingBigScreen{
+    height:300px;
+    width:60%;
+    margin-top: 50px;
+}
+#bookingImgBigScreen{
+    width:50%;
+    height:230px;
+    background-image: url('../../assets/images/footer.jpg');
+    position:absolute;
+    top:90px;
+    left: 50%;
+}
+#bookingImgMobile{
+    display:none;
+}
+#bookingMobile{
+    width:100%;
+}
+
+
+#booking{
+    color:#ba0b0b;
+    text-align: center;
+    font-size: 32px;
+    font-family:"Swanky and Moo Moo", cursive; ;
+    transform: rotate(-2.85deg);
+    margin-top:10px;
+}
+#horaire{
+    text-align: center;
+    color:white;
+}

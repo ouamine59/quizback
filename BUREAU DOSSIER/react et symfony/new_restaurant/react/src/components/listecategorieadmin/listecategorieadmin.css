@@ -1,0 +1,48 @@
+.containerTableauBigScreen, .containerTableauMobile{
+    width:90%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:25px;
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.rowArrayBigScreen, .rowArrayMobile{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom:1px solid black ;
+    align-items: center;
+}
+.aa{
+    display: flex;
+    width:90%;
+    justify-content: space-between;
+    
+}
+.test{
+    width:50px;
+    
+}
+.nameCategory{
+    display:flex;
+    justify-content: start;
+    width:100%;
+}
+
+.btn-delete{
+    width:30px;
+    height:30px;
+    background-color: red;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    color: white;
+}
+
+.btn-delete:hover{
+    cursor:pointer;
+}

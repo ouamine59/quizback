@@ -1,0 +1,43 @@
+# api/config/packages/security.yaml
+security:
+        
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        App\Entity\User: 'auto'
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        users:
+            entity:
+                class: App\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/_(profiler|wdt)
+            security: false
+        api:
+            pattern: ^/api
+            stateless: true
+            provider: users
+            jwt: ~
+        main:
+            json_login:
+                check_path: app_login # The name in routes.yaml is enough for mapping
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+    access_control:
+        # - { path: ^/admin/categories/listing, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/admin/categories/create/:categorie, roles: IS_AUTHENTICATED_FULLY }
+        
+        - { path: ^/admin/categorie/delete/:id, roles: IS_AUTHENTICATED_FULLY }
+        
+        - { path: ^/admin/categories/update/:id/:category, roles: IS_AUTHENTICATED_FULLY }
+        
+        - { path: ^/$, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI
+        - { path: ^/docs, roles: PUBLIC_ACCESS } # Allows accessing the Swagger UI docs
+        - { path: ^/auth, roles: PUBLIC_ACCESS }
+        
